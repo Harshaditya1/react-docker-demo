@@ -8,31 +8,38 @@ function App() {
   return (
     <div className="app">
       <nav className="navbar">
-        <h2>Docker<span>Hub</span></h2>
-        <span className="badge">React App</span>
+        <h2>
+          Docker<span>Hub</span>
+        </h2>
+        <span className="badge">React + Vite</span>
       </nav>
 
       <main className="container">
         <div className="icon">🐳</div>
 
         <h1>
-          Container is <span>Alive!</span>
+          Welcome to <span>Docker World!</span>
         </h1>
 
         <p className="subtitle">
-          Your React application is running successfully
-          inside a Docker container.
+          Updated successfully! This React application is
+          containerized with Docker and powered by Vite.
         </p>
 
         <div className="card">
           <div className="card-header">
-            <h3>Container Status</h3>
+            <h3>Container Information</h3>
             <span className="dot"></span>
           </div>
 
           <div className="info">
             <span>Application</span>
             <strong>React + Vite</strong>
+          </div>
+
+          <div className="info">
+            <span>Container Name</span>
+            <strong>react-demo</strong>
           </div>
 
           <div className="info">
@@ -46,17 +53,24 @@ function App() {
           </div>
 
           <div className="info">
-            <span>Status</span>
+            <span>Application Status</span>
             <strong className="success">{status}</strong>
           </div>
 
           <button
             onClick={() =>
-              setStatus(status === "Running" ? "Healthy" : "Running")
+              setStatus((current) =>
+                current === "Running" ? "Healthy" : "Running"
+              )
             }
           >
-            Check Container Status ↻
+            Check Application Status ↻
           </button>
+        </div>
+
+        <div className="success-message">
+          <span>✓</span>
+          <p>Your application is ready to use!</p>
         </div>
 
         <p className="footer">
